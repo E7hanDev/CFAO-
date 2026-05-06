@@ -3,10 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CFAO Mobility | Ford Malawi Digital Showroom</title>
-    <link rel="stylesheet" href="style.css">
+    <title>CFAO Mobility | Ford Malawi Official</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        /* PRO CSS - EMBEDDED TO PREVENT BREAKING */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        body { background-color: #fdfdfd; color: #002c5f; line-height: 1.5; overflow-x: hidden; }
+
+        /* Navigation */
+        .pro-nav { 
+            display: flex; justify-content: space-between; align-items: center; 
+            padding: 15px 20px; background: rgba(255, 255, 255, 0.95); 
+            backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 100;
+            border-bottom: 1px solid #eee;
+        }
+        .logo { height: 28px; }
+        .nav-right { display: flex; gap: 12px; align-items: center; }
+        .info-toggle { 
+            background: #002c5f; color: white; border: none; 
+            padding: 8px 14px; border-radius: 6px; font-size: 10px; 
+            font-weight: 800; display: flex; align-items: center; gap: 6px;
+        }
+
+        /* Info Panel */
+        .info-panel { 
+            display: none; background: #002c5f; color: white; padding: 25px;
+            border-bottom-left-radius: 20px; border-bottom-right-radius: 20px;
+        }
+        .info-panel.active { display: block; animation: slideDown 0.3s ease-out; }
+        .panel-header { font-size: 11px; letter-spacing: 1.5px; font-weight: 800; opacity: 0.6; margin-bottom: 15px; }
+        .info-panel ul { list-style: none; }
+        .info-panel li { margin-bottom: 15px; font-size: 14px; display: flex; align-items: center; gap: 12px; }
+
+        /* Main Content */
+        .content-container { padding: 35px 20px; max-width: 500px; margin: 0 auto; }
+        .eyebrow { font-size: 10px; font-weight: 800; color: #8e8e8e; letter-spacing: 2px; margin-bottom: 8px; text-transform: uppercase; }
+        h1 { font-size: 30px; font-weight: 800; color: #002c5f; margin-bottom: 30px; letter-spacing: -0.5px; line-height: 1.1; }
+
+        /* Branch Cards */
+        .dealer-grid { display: flex; flex-direction: column; gap: 14px; }
+        .branch-card { 
+            text-decoration: none; color: #002c5f; border: 1px solid #e2e8f0; 
+            padding: 18px; border-radius: 14px; display: flex; 
+            justify-content: space-between; align-items: center; transition: all 0.2s ease;
+            background: #ffffff;
+        }
+        .branch-card:active { transform: scale(0.97); background: #f8fafc; border-color: #002c5f; }
+        .branch-meta { display: flex; align-items: center; gap: 15px; }
+        .branch-text { display: flex; flex-direction: column; }
+        .city { font-size: 10px; font-weight: 800; color: #64748b; }
+        .name { font-size: 14px; font-weight: 700; }
+        .call-badge { font-size: 10px; font-weight: 800; background: #f1f5f9; padding: 6px 14px; border-radius: 8px; }
+
+        /* Quick Actions */
+        .quick-actions { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 45px; }
+        .action-item { background: #f8fafc; padding: 20px 10px; border-radius: 16px; text-align: center; border: 1px solid #f1f5f9; }
+        .action-item p { font-size: 10px; font-weight: 700; margin-top: 10px; color: #475569; }
+
+        /* Footer */
+        footer { padding: 40px 20px; text-align: center; }
+        .cta-main { 
+            width: 100%; background: #002c5f; color: white; border: none; 
+            padding: 20px; border-radius: 12px; font-weight: 800; font-size: 14px;
+        }
+        .copyright { font-size: 11px; color: #94a3b8; margin-top: 15px; }
+
+        @keyframes slideDown { from { opacity: 0; transform: translateY(-15px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
 </head>
 <body>
 
@@ -17,12 +82,11 @@
                 <i data-lucide="info"></i>
                 <span>RESOURCES</span>
             </button>
-            <div class="burger-menu"><i data-lucide="menu"></i></div>
         </div>
     </nav>
 
     <div id="infoPanel" class="info-panel">
-        <div class="panel-header">Showroom Services</div>
+        <div class="panel-header">SHOWROOM SERVICES</div>
         <ul>
             <li><i data-lucide="file-text"></i> 2026 Vehicle Price List</li>
             <li><i data-lucide="calendar"></i> Book a Test Drive</li>
@@ -91,10 +155,7 @@
     </footer>
 
     <script>
-        // Initialize Lucide Icons
         lucide.createIcons();
-
-        // Panel Toggle Logic
         function toggleInfo() {
             const panel = document.getElementById('infoPanel');
             panel.classList.toggle('active');
