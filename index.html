@@ -3,57 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ford Malawi | CFAO Mobility</title>
+    <title>CFAO Mobility | Ford Malawi Digital Showroom</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
 
-    <nav>
+    <nav class="pro-nav">
         <img src="https://upload.wikimedia.org/wikipedia/commons/a/a0/Ford_Motor_Company_Logo.svg" class="logo" alt="Ford">
-        <div class="menu-btn">MENU ≡</div>
+        <div class="nav-right">
+            <button class="info-toggle" onclick="toggleInfo()">
+                <i data-lucide="info"></i>
+                <span>RESOURCES</span>
+            </button>
+            <div class="burger-menu"><i data-lucide="menu"></i></div>
+        </div>
     </nav>
 
-    <div class="breadcrumb">HOME > LOCATE A DEALER > BLANTYRE</div>
-
-    <section class="locator">
-        <h1>LOCATE A DEALER</h1>
-        
-        <div class="dealer-list">
-            <div class="dealer-card active">
-                <span>🏢</span> CFAO MOTORS - BLANTYRE
-            </div>
-            <div class="dealer-card">
-                <span>🏢</span> CFAO MOTORS - LILONGWE
-            </div>
-            <div class="dealer-card">
-                <span>🏢</span> CFAO MOTORS - MZUZU
-            </div>
-        </div>
-
-        <h2 class="branch-title">CFAO MOTORS - <br>BLANTYRE</h2>
-
-        <div class="quick-links">
-            <div class="icon-item">
-                <div class="icon-box">🚗</div>
-                <p>New Vehicles</p>
-            </div>
-            <div class="icon-item">
-                <div class="icon-box">⚙️</div>
-                <p>Aftersales</p>
-            </div>
-            <div class="icon-item">
-                <div class="icon-box">🤝</div>
-                <p>Company Sales</p>
-            </div>
-        </div>
-    </section>
-
-    <div class="footer-btns">
-        <button class="contact-btn">CONTACT US</button>
-        <button class="go-btn">GO</button>
+    <div id="infoPanel" class="info-panel">
+        <div class="panel-header">Showroom Services</div>
+        <ul>
+            <li><i data-lucide="file-text"></i> 2026 Vehicle Price List</li>
+            <li><i data-lucide="calendar"></i> Book a Test Drive</li>
+            <li><i data-lucide="shield-check"></i> Warranty & Service Plans</li>
+        </ul>
     </div>
 
+    <main class="content-container">
+        <div class="eyebrow">OFFICIAL MALAWI DEALER NETWORK</div>
+        <h1>LOCATE A BRANCH</h1>
+        
+        <div class="dealer-grid">
+            <a href="tel:+265891002333" class="branch-card">
+                <div class="branch-meta">
+                    <i data-lucide="phone"></i>
+                    <div class="branch-text">
+                        <span class="city">BLANTYRE</span>
+                        <span class="name">CFAO MOTORS - MANDALA</span>
+                    </div>
+                </div>
+                <div class="call-badge">CALL</div>
+            </a>
+
+            <a href="tel:+265999983591" class="branch-card">
+                <div class="branch-meta">
+                    <i data-lucide="phone"></i>
+                    <div class="branch-text">
+                        <span class="city">LILONGWE</span>
+                        <span class="name">CFAO MOTORS - LILONGWE</span>
+                    </div>
+                </div>
+                <div class="call-badge">CALL</div>
+            </a>
+
+            <a href="tel:+2651303233" class="branch-card">
+                <div class="branch-meta">
+                    <i data-lucide="phone"></i>
+                    <div class="branch-text">
+                        <span class="city">MZUZU</span>
+                        <span class="name">CFAO MOTORS - MZUZU</span>
+                    </div>
+                </div>
+                <div class="call-badge">CALL</div>
+            </a>
+        </div>
+
+        <div class="quick-actions">
+            <div class="action-item">
+                <i data-lucide="car"></i>
+                <p>New Vehicles</p>
+            </div>
+            <div class="action-item">
+                <i data-lucide="wrench"></i>
+                <p>Aftersales</p>
+            </div>
+            <div class="action-item">
+                <i data-lucide="users"></i>
+                <p>Fleet Sales</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <button class="cta-main">REQUEST A QUOTE</button>
+        <p class="copyright">© 2026 CFAO Mobility Malawi</p>
+    </footer>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Panel Toggle Logic
+        function toggleInfo() {
+            const panel = document.getElementById('infoPanel');
+            panel.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
-
