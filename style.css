@@ -1,34 +1,76 @@
+/* Core Reset */
 * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
-body { background-color: #f8f9fa; color: #002c5f; }
+body { background-color: #fdfdfd; color: #002c5f; line-height: 1.5; overflow-x: hidden; }
 
-/* Header */
-nav { display: flex; justify-content: space-between; align-items: center; padding: 20px; background: white; border-bottom: 1px solid #ddd; }
-.logo { height: 40px; }
-.menu-btn { font-weight: bold; color: #002c5f; }
-
-.breadcrumb { font-size: 10px; padding: 15px 20px; color: #666; letter-spacing: 1px; }
-
-/* Content */
-.locator { padding: 0 20px; text-align: center; }
-h1 { font-size: 24px; margin: 20px 0; letter-spacing: 1px; }
-
-.dealer-list { display: flex; flex-direction: column; gap: 10px; margin-bottom: 30px; }
-.dealer-card { 
-    border: 1.5px solid #002c5f; padding: 15px; border-radius: 8px; 
-    font-weight: 600; display: flex; align-items: center; justify-content: center; gap: 10px;
+/* Navigation */
+.pro-nav { 
+    display: flex; justify-content: space-between; align-items: center; 
+    padding: 15px 20px; background: rgba(255, 255, 255, 0.9); 
+    backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 100;
+    border-bottom: 1px solid #eee;
 }
-.dealer-card.active { background: #002c5f; color: white; }
+.logo { height: 30px; }
+.nav-right { display: flex; gap: 12px; align-items: center; }
+.info-toggle { 
+    background: #002c5f; color: white; border: none; 
+    padding: 6px 12px; border-radius: 4px; font-size: 9px; 
+    font-weight: 700; display: flex; align-items: center; gap: 6px;
+}
+.burger-menu { color: #002c5f; }
 
-.branch-title { font-size: 28px; font-weight: 800; margin: 40px 0; line-height: 1.2; }
+/* Info Panel */
+.info-panel { 
+    display: none; background: #002c5f; color: white; padding: 25px;
+    border-bottom-left-radius: 15px; border-bottom-right-radius: 15px;
+}
+.info-panel.active { display: block; animation: slideDown 0.3s ease; }
+.panel-header { font-size: 12px; letter-spacing: 1px; font-weight: 800; opacity: 0.7; margin-bottom: 15px; }
+.info-panel ul { list-style: none; }
+.info-panel li { margin-bottom: 15px; font-size: 14px; display: flex; align-items: center; gap: 12px; }
 
-/* Icons */
-.quick-links { display: flex; justify-content: space-around; margin: 30px 0; }
-.icon-box { font-size: 30px; margin-bottom: 5px; }
-.icon-item p { font-size: 12px; font-weight: bold; }
+/* Content Section */
+.content-container { padding: 30px 20px; }
+.eyebrow { font-size: 10px; font-weight: 800; color: #888; letter-spacing: 2px; margin-bottom: 8px; }
+h1 { font-size: 28px; font-weight: 800; color: #002c5f; margin-bottom: 35px; letter-spacing: -0.5px; }
 
-/* Bottom Buttons */
-.footer-btns { display: flex; gap: 10px; padding: 20px; }
-button { flex: 1; padding: 15px; border-radius: 5px; font-weight: bold; border: 1.5px solid #002c5f; cursor: pointer; }
-.contact-btn { background: white; color: #002c5f; }
-.go-btn { background: white; color: #002c5f; }
+/* Interactive Cards */
+.dealer-grid { display: flex; flex-direction: column; gap: 15px; }
+.branch-card { 
+    text-decoration: none; color: #002c5f; border: 1.5px solid #eaeaea; 
+    padding: 20px; border-radius: 12px; display: flex; 
+    justify-content: space-between; align-items: center; transition: 0.2s;
+    background: #fff;
+}
+.branch-card:active { transform: scale(0.97); background: #f8f9fb; border-color: #002c5f; }
+.branch-meta { display: flex; align-items: center; gap: 15px; }
+.branch-text { display: flex; flex-direction: column; }
+.city { font-size: 10px; font-weight: 800; color: #888; }
+.name { font-size: 14px; font-weight: 700; }
 
+.call-badge { 
+    font-size: 9px; font-weight: 800; background: #eef2f6; 
+    padding: 6px 12px; border-radius: 6px; 
+}
+
+/* Quick Actions Grid */
+.quick-actions { 
+    display: grid; grid-template-columns: repeat(3, 1fr); 
+    gap: 12px; margin-top: 45px; 
+}
+.action-item { 
+    background: #f4f7f9; padding: 20px 10px; border-radius: 12px; 
+    text-align: center; color: #002c5f;
+}
+.action-item p { font-size: 10px; font-weight: 700; margin-top: 10px; }
+
+/* Footer Styling */
+footer { padding: 30px 20px; text-align: center; }
+.cta-main { 
+    width: 100%; background: #002c5f; color: white; border: none; 
+    padding: 20px; border-radius: 10px; font-weight: 800; font-size: 14px;
+    letter-spacing: 1px; margin-bottom: 15px;
+}
+.copyright { font-size: 10px; color: #aaa; font-weight: 500; }
+
+/* Animations */
+@keyframes slideDown { from { opacity: 0; transform: translateY(-15px); } to { opacity: 1; transform: translateY(0); } }
